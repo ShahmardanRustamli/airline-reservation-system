@@ -5,9 +5,10 @@ import static helper.AdminHelper.adminEntry;
 import static util.MenuUtil.entryMenu;
 
 public class IManagementService implements ManagementService {
-    PassengerManagement passengerManagement = new IPassengerManagement();
+
     @Override
     public void management() {
+        PassengerManagement passengerManagement = new IPassengerManagement();
         while (true){
             try {
                 byte option = entryMenu();
