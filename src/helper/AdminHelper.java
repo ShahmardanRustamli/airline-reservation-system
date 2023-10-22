@@ -1,7 +1,7 @@
 package helper;
 import enums.ExceptionEnum;
 import management.AdminManagement;
-import management.IAdminManagement;
+import management.impl.IAdminManagement;
 import util.InputUtil;
 
 public class AdminHelper {
@@ -19,13 +19,14 @@ public class AdminHelper {
             if (username.equals(ADMIN_USERNAME) && password.equals(ADMIN_PASS)) {
                 adminManagement.adminManage();
             } else {
-                System.err.println(ExceptionEnum.INVALID_LOGIN_EXCEPTION);
-                System.out.println("Incorrect Password, Please Try Again!\n" +
+                System.out.println(ExceptionEnum.INVALID_LOGIN_EXCEPTION);
+                System.out.println("Incorrect Password or Username, Please Try Again!\n" +
                         "Your attempts: " + --LAST_ATTEMPTS);
                 attempt++;
             }
             if (attempt == MAX_ATTEMPTS){
                 System.out.println("Limit Reached! System is Closing...");
+                Runtime.getRuntime().exit(0);
             }
         }
     }

@@ -1,4 +1,4 @@
-import management.IManagementService;
+import management.impl.IManagementService;
 import management.ManagementService;
 
 

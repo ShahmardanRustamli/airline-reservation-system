@@ -1,10 +1,12 @@
-package management;
+package management.impl;
 import enums.ExceptionEnum;
 import exceptions.ApplicationException;
+import management.AdminManagement;
+import management.ManagementService;
 import service.AdminService;
 import service.impl.IAdminService;
 import util.MenuUtil;
-public class IAdminManagement implements AdminManagement{
+public class IAdminManagement implements AdminManagement {
     @Override
     public void adminManage() {
         ManagementService managementService = new IManagementService();

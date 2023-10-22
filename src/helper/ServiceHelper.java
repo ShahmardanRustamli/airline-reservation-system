@@ -15,17 +15,16 @@ import java.util.UUID;
 import static enums.ExceptionEnum.TICKET_NOT_FOUND_EXCEPTION;
 
 public class ServiceHelper {
-
-    static UUID flightName = UUID.randomUUID();
-    static String randomName = flightName.toString().substring(0,5);
     static long flightId;
     static long passengerId;
     public static Flight fillFlight(){
         try{
+            UUID flightName = UUID.randomUUID();
+            String randomName = flightName.toString().substring(0,5).toUpperCase();
             System.out.println("------------| ADD FLIGHT |------------");
             String name = randomName;
-            String source = InputUtil.getInstance().inputString("Enter The Source:");
-            String destination = InputUtil.getInstance().inputString("Enter The Destination:");
+            String source = InputUtil.getInstance().inputString("Enter The Source:").toUpperCase();
+            String destination = InputUtil.getInstance().inputString("Enter The Destination:").toUpperCase();
             LocalDate date = dateFormat("Enter The Fight Date: ");
             LocalTime startTime = timeFormat("Enter The Flight Hour:");
             LocalTime reachTime = timeFormat("Enter The Reach Time:");
@@ -60,14 +59,14 @@ public class ServiceHelper {
 
     public static Passenger fillPassenger(){
         System.out.println("------------| PASSENGER REGISTER | ------------");
-        String name = InputUtil.getInstance().inputString("Enter Your Name:");
-        String surname = InputUtil.getInstance().inputString("Enter Your Surname:");
+        String name = InputUtil.getInstance().inputString("Enter Your Name:").toUpperCase();
+        String surname = InputUtil.getInstance().inputString("Enter Your Surname:").toUpperCase();
         int age = InputUtil.getInstance().inputInt("Enter Your Age:");
         LocalDate birthday = dateFormat("Enter Your Birthday: ");
         String phoneNumber = InputUtil.getInstance().inputString("Enter Your Phone Number:");
-        String email = InputUtil.getInstance().inputString("Enter Your email Address:");
-        String passportNumber = InputUtil.getInstance().inputString("Enter Your Passport Number:");
-        String gender = InputUtil.getInstance().inputString("Enter Your Gender:");
+        String email = InputUtil.getInstance().inputString("Enter Your email Address:").toUpperCase();
+        String passportNumber = InputUtil.getInstance().inputString("Enter Your Passport Number:").toUpperCase();
+        String gender = InputUtil.getInstance().inputString("Enter Your Gender:").toUpperCase();
         double passengerBalance = 2000;
         long ticketId = flightId;
         String seatNumber = randomSeat();

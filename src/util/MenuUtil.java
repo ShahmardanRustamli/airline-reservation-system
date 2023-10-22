@@ -32,9 +32,14 @@ public class MenuUtil {
     public static byte orderMenu(){
         System.out.println("""
                 [0] -> Back.
-                [1] -> View Flights.
+                [1] -> Buy Ticket.
                 [2] -> Search Flights.""");
         return InputUtil.getInstance().inputByte("Choose Option:");
     }
-
+    public static byte addOrBack(){
+        System.out.println("""
+                [0] -> Back
+                [1] -> Add Flight""");
+        return InputUtil.getInstance().inputByte("Choose Option:");
+    }
 }

@@ -1,11 +1,13 @@
-package management;
+package management.impl;
 import enums.ExceptionEnum;
 import exceptions.ApplicationException;
+import management.ManagementService;
+import management.PassengerManagement;
 import service.PassengerService;
 import service.impl.IPassengerService;
 import static util.MenuUtil.passengerMenu;
 
-public class IPassengerManagement implements PassengerManagement{
+public class IPassengerManagement implements PassengerManagement {
     PassengerService passengerService = new IPassengerService();
     @Override
     public void passengerManage() {
